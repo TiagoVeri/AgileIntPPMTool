@@ -19,7 +19,7 @@ public class Project {
     @Column(updatable = false, unique = true)
     private String projectIdentifier;
     private String description;
-    @JsonFormat(pattern = "dd-MM-yyyy")//melhor formato Json para Date, formato original e timestamp
+    @JsonFormat(pattern = "dd-MM-yyyy")//melhor formato Json para Date, formato original e timestamp, mês MM pra não dar erro
     private Date start_date;
     @JsonFormat(pattern = "dd-MM-yyyy")
     private Date end_date;
