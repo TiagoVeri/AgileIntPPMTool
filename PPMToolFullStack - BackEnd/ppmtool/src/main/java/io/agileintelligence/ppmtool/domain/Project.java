@@ -18,6 +18,7 @@ public class Project {
     @Size(min=4, max=5, message = "Por favor use de 4 a 5 caracteres")
     @Column(updatable = false, unique = true)
     private String projectIdentifier;
+    @NotBlank(message = "Requirido descrição do Projeto")
     private String description;
     @JsonFormat(pattern = "dd-MM-yyyy")//melhor formato Json para Date, formato original e timestamp, mês MM pra não dar erro
     private Date start_date;
