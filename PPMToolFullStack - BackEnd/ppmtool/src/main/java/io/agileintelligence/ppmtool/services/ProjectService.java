@@ -21,4 +21,16 @@ public class ProjectService {
            throw new ProjectIdException("Projeto ID '" +project.getProjectIdentifier().toUpperCase()+"' já existe");
         }
     }
+
+    public Project findProjectByIdentifier(String projectId){
+        Project project = projectRepository.findByProjectIdentifier(projectId.toUpperCase()); //Nota: importante lembrar do toUpperCase pq CamelCase
+
+        //Quando não objeto não é achado, não gera erro mas sim valor "null"
+        //Logo não passa pelo try/catch, necessário usar if.
+        if(project == null){
+            throw new ProjectIdException("Projeto ID '" +projectId.toUpperCase()+"' não existe");
+        }
+
+        return project;
+    }
 }

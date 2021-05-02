@@ -17,7 +17,7 @@ public class Project {
     @NotBlank(message = "Requirido Identificador do Projeto")
     @Size(min=4, max=5, message = "Por favor use de 4 a 5 caracteres")
     @Column(updatable = false, unique = true)
-    private String projectIdentifier;
+    private String projectIdentifier; //Será usado como ID é, para buscar o valor único (na URL, regra pedida)
     @NotBlank(message = "Requirido descrição do Projeto")
     private String description;
     @JsonFormat(pattern = "dd-MM-yyyy")//melhor formato Json para Date, formato original e timestamp, mês MM pra não dar erro
